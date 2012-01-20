@@ -17,7 +17,11 @@ if [ -z "$REPO_NAME" ] ; then
 fi
 
 if [ -z "$REPO_HOME" ] ; then
-	REPO_HOME="http://github.com/nvie/gitflow.git"
+	REPO_HOME="http://github.com/bloveridge/gitflow.git"
+fi
+
+if [ -z "$BRANCH" ] ; then
+    BRANCH="blove"
 fi
 
 EXEC_FILES="git-flow"
