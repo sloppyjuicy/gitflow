@@ -60,6 +60,15 @@ case "$1" in
 			echo "Cloning repo from GitHub to $REPO_NAME"
 			git clone "$REPO_HOME" "$REPO_NAME"
 		fi
+
+        if [ -n "$BRANCH" ] ; then
+			echo "switching to branch $BRANCH"
+			lastcwd=$PWD
+			cd "$REPO_NAME"
+			git checkout "$BRANCH"
+			cd "$lastcwd"
+		fi
+
 		if [ -f "$REPO_NAME/$SUBMODULE_FILE" ] ; then
 			echo "Submodules look up to date"
 		else
